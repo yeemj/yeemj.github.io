@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://yeemj.github.io">
   <title>2Python中的转义字符 | yeemj&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转义字符 说明    \n 换行符，将光标位置移到下一行开头   \r 回车符，将光标位置移到本行开头   \t 水平制表符，也即 Tab 键，一般相当于四个空格   \b 退格（Backspace），将光标位置移到前一列   \\ 反斜线\   \&#39; 单引号’   \“ 双引号”   \ 在字符串行尾的续行符，即一行未完，转到下一行继续写">
+  <meta name="description" content="转义字符——以反斜杠\开头的符号。   本篇内容：举例说明转义字符的用法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2Python中的转义字符">
 <meta property="og:url" content="https://yeemj.github.io/posts/8f920c3/index.html">
 <meta property="og:site_name" content="yeemj&#39;s blog">
-<meta property="og:description" content="转义字符 说明    \n 换行符，将光标位置移到下一行开头   \r 回车符，将光标位置移到本行开头   \t 水平制表符，也即 Tab 键，一般相当于四个空格   \b 退格（Backspace），将光标位置移到前一列   \\ 反斜线\   \&#39; 单引号’   \“ 双引号”   \ 在字符串行尾的续行符，即一行未完，转到下一行继续写">
+<meta property="og:description" content="转义字符——以反斜杠\开头的符号。   本篇内容：举例说明转义字符的用法。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-08T12:14:28.000Z">
-<meta property="article:modified_time" content="2021-01-08T12:37:04.248Z">
+<meta property="article:modified_time" content="2021-01-09T07:46:47.000Z">
 <meta property="article:author" content="yeemj">
 <meta property="article:tag" content="python用法查询">
 <meta name="twitter:card" content="summary">
@@ -179,7 +179,12 @@
       
 
  
- <table>
+ <p>  转义字符——以反斜杠<code>\</code>开头的符号。</p>
+<p>  本篇内容：举例说明转义字符的用法。</p>
+<a id="more"></a>
+
+<p>转义字符表：</p>
+<table>
 <thead>
 <tr>
 <th align="center">转义字符</th>
@@ -219,6 +224,29 @@
 <td align="left">在字符串行尾的续行符，即一行未完，转到下一行继续写</td>
 </tr>
 </tbody></table>
+<ol>
+<li>换行符<code>\n</code> (new line) （这里换行也可以采用<code>print(&#39;&#39;&#39;  &#39;&#39;&#39;)</code>print()函数的三引号用法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;哆啦A梦的许愿瓶：\n1.有钱有闲 \n2.满世界兜风\n3.睡着都笑醒&#x27;</span>)</span><br><span class="line"><span class="comment">#》》以下是结果</span></span><br><span class="line">-------------------</span><br><span class="line">哆啦A梦的许愿瓶：</span><br><span class="line"><span class="number">1.</span>有钱有闲</span><br><span class="line"><span class="number">2.</span>满世界兜风</span><br><span class="line"><span class="number">3.</span>睡着都笑醒</span><br><span class="line">-------------------</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>回车符<code>\r</code>(return)，将光标移到一行的开始，所以\r之后的内容会覆盖掉上次打印的内容</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;满世界兜风是哆啦A梦的许愿瓶&#x27;</span>)</span><br><span class="line">print(<span class="string">&#x27;满世界兜风是哆啦A梦的许愿瓶\r睡着都笑醒&#x27;</span>)</span><br><span class="line"><span class="comment">#》》以下是结果</span></span><br><span class="line">-------------------</span><br><span class="line">满世界兜风是哆啦A梦的许愿瓶</span><br><span class="line">睡着都笑醒是哆啦A梦的许愿瓶</span><br><span class="line">-------------------</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>水平制表符<code>\t</code>(table)，1个tab键，水平上移动四个空格</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;许愿瓶1\t\t许愿瓶2\t\t许愿瓶3&#x27;</span>)</span><br><span class="line">print(<span class="string">&#x27;有钱有闲\t满世界兜风\t睡着都笑醒&#x27;</span>)</span><br><span class="line"><span class="comment">#》》以下是结果</span></span><br><span class="line">-------------------</span><br><span class="line">许愿瓶<span class="number">1</span>         许愿瓶<span class="number">2</span>         许愿瓶<span class="number">3</span></span><br><span class="line">有钱有闲        满世界兜风       睡着都笑醒</span><br><span class="line">-------------------</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>反斜线<code>\\</code>单引号<code>\&#39;</code> 双引号 <code>\&quot;</code>，输出一个反斜杠\一个单引号’一个双引号</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27; 输出一个斜杠\\一个单引号\&#x27;一个双引号\&quot; &#x27;</span></span><br><span class="line">print(a)</span><br><span class="line"><span class="comment">#》》输出一个斜杠\一个单引号&#x27;一个双引号&quot;</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>续行符<code>\</code>，用在字符串末尾，表示信息未完</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在以下的例子中，\表示一句话未完</span></span><br><span class="line">a1 = <span class="string">&quot;有钱有闲！\</span></span><br><span class="line"><span class="string">满世界兜风！\</span></span><br><span class="line"><span class="string">睡着都笑醒！&quot;</span></span><br><span class="line">print(a1)</span><br><span class="line"><span class="comment">#》》有钱有闲！满世界兜风！睡着都笑醒！</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#在以下的例子中，\n表示换行，\表示一句话未完</span></span><br><span class="line">a2 = <span class="string">&quot;有钱有闲\n\</span></span><br><span class="line"><span class="string">满世界兜风\n\</span></span><br><span class="line"><span class="string">睡着都笑醒&quot;</span></span><br><span class="line">print(a2)</span><br><span class="line"><span class="comment">#》》以下是结果</span></span><br><span class="line">-------------------</span><br><span class="line">有钱有闲！</span><br><span class="line">满世界兜风！</span><br><span class="line">睡着都笑醒！</span><br><span class="line">-------------------</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<p>如有错误，敬请指出！</p>
 
  
   <!-- 添加版权声明 -->
