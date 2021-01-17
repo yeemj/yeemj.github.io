@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yeemj.github.io">
-  <title>分类 | yeemj&#39;s blog</title>
+  <title>7字典 | yeemj&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="https://yeemj.github.io/categories/index.html">
+  <meta name="description" content="介绍python字典的用法。 字典是Python中唯一内建的映射类型。字典中没有特殊的顺序，都存储在一个特定的键下面，键可以是数字，字符串，甚至是元组。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="7字典">
+<meta property="og:url" content="https://yeemj.github.io/posts/32660952/index.html">
 <meta property="og:site_name" content="yeemj&#39;s blog">
-<meta property="og:description" content="学习博客">
+<meta property="og:description" content="介绍python字典的用法。 字典是Python中唯一内建的映射类型。字典中没有特殊的顺序，都存储在一个特定的键下面，键可以是数字，字符串，甚至是元组。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-12-30T11:13:22.000Z">
-<meta property="article:modified_time" content="2020-12-31T03:00:22.639Z">
+<meta property="article:published_time" content="2021-01-17T12:56:46.000Z">
+<meta property="article:modified_time" content="2021-01-17T12:58:36.000Z">
 <meta property="article:author" content="yeemj">
-<meta property="article:tag" content="CS&#x2F;Reading">
+<meta property="article:tag" content="python用法查询">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="yeemj&#39;s blog" type="application/atom+xml">
@@ -156,20 +156,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-7字典" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      分类
+      7字典
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2020-12-30T11:13:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-30</time>
+        <a href="/posts/32660952/" class="archive-article-date">
+  	<time datetime="2021-01-17T12:56:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-17</time>
 </a>
         
 		
@@ -178,23 +178,211 @@
     <div class="article-entry" itemprop="articleBody">
       
 
-<div class="category-all-page">
- <div class="category-all-title">
  
- </div>
- 
- <div class="category-all">
- <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cs%E5%AD%A6%E4%B9%A0/">cs学习</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><span class="category-list-count">1</span></li></ul>
- </div>
- 
-</div>
+ <p> 介绍python字典的用法。</p>
+<p>字典是Python中唯一内建的映射类型。字典中没有特殊的顺序，都存储在一个特定的键下面，键可以是数字，字符串，甚至是元组。</p>
+<a id="more"></a>
 
+<h4 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#键值对</span></span><br><span class="line"><span class="comment">#方法一：&#123;key: value&#125;</span></span><br><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>&#125;</span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;A&#x27;: 95, &#x27;B&#x27;: 98, &#x27;C&#x27;: 96&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#方法二：字典推导</span></span><br><span class="line">list1 = [<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;C&#x27;</span>]</span><br><span class="line">list2 = [<span class="number">95</span>,<span class="number">98</span>,<span class="number">96</span>]</span><br><span class="line">dic2 = &#123;list1[i] : list2[i] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(list1))&#125;</span><br><span class="line">print(dic2)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;A&#x27;: 95, &#x27;B&#x27;: 98, &#x27;C&#x27;: 96&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>要点：</p>
+<ul>
+<li><p>键具有唯一性，值可以重复</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">dic2 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;A&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">print(dic2) </span><br><span class="line"><span class="comment">#》》&#123;&#x27;A&#x27;: 98, &#x27;B&#x27;: 98, &#x27;C&#x27;: 96&#125;     #在后面重新定义了A的值</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-提取值"><a href="#2-提取值" class="headerlink" title="2. 提取值"></a>2. 提取值</h4><p>字典名[键]——取得字典的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>&#125;</span><br><span class="line">print(dic1[<span class="string">&#x27;A&#x27;</span>])</span><br><span class="line"><span class="comment">#》》95</span></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="3-字典的修改"><a href="#3-字典的修改" class="headerlink" title="3. 字典的修改"></a>3. 字典的修改</h4><ul>
+<li><p>删除键值对</p>
+<p><code>del 字典名[键]</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line"><span class="keyword">del</span> dic1[<span class="string">&#x27;B&#x27;</span>]</span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;A&#x27;: 95, &#x27;C&#x27;: 96, &#x27;D&#x27;: 98&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>新增键值对</p>
+<p><code>字典名[键] = 值</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">dic1[<span class="string">&#x27;E&#x27;</span>] = <span class="number">100</span></span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;A&#x27;: 95, &#x27;B&#x27;: 98, &#x27;C&#x27;: 96, &#x27;D&#x27;: 98, &#x27;E&#x27;: 100&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>直接修改某值</p>
+<p><code>字典名[键] = 值</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">dic1[<span class="string">&#x27;A&#x27;</span>] = <span class="number">100</span></span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;A&#x27;: 100, &#x27;B&#x27;: 98, &#x27;C&#x27;: 96, &#x27;D&#x27;: 98&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>判断字典是否存在指定的key</p>
+<p><code>key in 字典</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">print(<span class="string">&#x27;A&#x27;</span> <span class="keyword">in</span> dic1)</span><br><span class="line"><span class="comment">#》》True</span></span><br><span class="line">print(<span class="string">&#x27;E&#x27;</span> <span class="keyword">in</span> dic1)</span><br><span class="line"><span class="comment">#》》False</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h4 id="4-字典的函数"><a href="#4-字典的函数" class="headerlink" title="4. 字典的函数"></a>4. 字典的函数</h4><ul>
+<li><p><code>clear</code></p>
+<p>得到一个空字典</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">dic1.clear()</span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p><code>copy</code></p>
+<p>与列表的<code>copy</code>方法进行比较。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>: <span class="number">90</span>, <span class="string">&#x27;B&#x27;</span>: [<span class="number">91</span>, <span class="number">92</span>, <span class="number">93</span>], <span class="string">&#x27;C&#x27;</span>: <span class="number">94</span>&#125;    <span class="comment">#  原字典</span></span><br><span class="line">dic2 = dic1                         <span class="comment"># 直接赋值</span></span><br><span class="line">dic3 = dic1.copy()                  <span class="comment"># 浅拷贝，只深拷贝父级目录</span></span><br><span class="line">dic4 = copy.deepcopy(dic1)          <span class="comment"># 深拷贝拷贝，父级目录，子级目录全部拷贝（需导入copy模块）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#修改dic1</span></span><br><span class="line">dic1[<span class="string">&#x27;A&#x27;</span>] = <span class="number">100</span></span><br><span class="line">dic1[<span class="string">&#x27;B&#x27;</span>][<span class="number">2</span>] = <span class="number">94</span></span><br><span class="line">print(dic1)   <span class="comment">#》》&#123;&#x27;A&#x27;: 100, &#x27;B&#x27;: [91, 92, 94], &#x27;C&#x27;: 94&#125;   </span></span><br><span class="line">print(dic2)   <span class="comment">#》》&#123;&#x27;A&#x27;: 100, &#x27;B&#x27;: [91, 92, 94], &#x27;C&#x27;: 94&#125;  #直接赋值，父子级都改变</span></span><br><span class="line">print(dic3)   <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [91, 92, 94], &#x27;C&#x27;: 94&#125;  #浅拷贝，改变子级</span></span><br><span class="line">print(dic4)   <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [91, 92, 93], &#x27;C&#x27;: 94&#125;  #深拷贝，都不改变</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#修改赋值字典（均在原始的基础上更改）</span></span><br><span class="line">dic2[<span class="string">&#x27;C&#x27;</span>] = <span class="number">95</span></span><br><span class="line">dic2[<span class="string">&#x27;B&#x27;</span>][<span class="number">1</span>] = <span class="number">93</span></span><br><span class="line">print(dic1)  <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [91, 93, 93], &#x27;C&#x27;: 95&#125;</span></span><br><span class="line">print(dic2)  <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [91, 93, 93], &#x27;C&#x27;: 95&#125;</span></span><br><span class="line">print(dic3)  <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [91, 93, 93], &#x27;C&#x27;: 94&#125;</span></span><br><span class="line">print(dic4)  <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [91, 92, 93], &#x27;C&#x27;: 94&#125;</span></span><br><span class="line"><span class="comment">###修改赋值字典，导致原字典改动完全一致</span></span><br><span class="line"><span class="comment">###浅拷贝，copy，改变子级</span></span><br><span class="line"><span class="comment">###深拷贝，deepcopy，都不影响</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#修改copy字典（均在原始的基础上更改）</span></span><br><span class="line">dic3[<span class="string">&#x27;C&#x27;</span>] = <span class="number">100</span></span><br><span class="line">dic3[<span class="string">&#x27;B&#x27;</span>][<span class="number">0</span>] = <span class="number">90</span></span><br><span class="line">print(dic1)  <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [90, 92, 93], &#x27;C&#x27;: 94&#125;</span></span><br><span class="line">print(dic2)  <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [90, 92, 93], &#x27;C&#x27;: 94&#125;</span></span><br><span class="line">print(dic3)  <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [90, 92, 93], &#x27;C&#x27;: 100&#125;</span></span><br><span class="line">print(dic4)  <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [91, 92, 93], &#x27;C&#x27;: 94&#125;</span></span><br><span class="line"><span class="comment">###修改浅拷贝字典，也会更改原字典的子级</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#修改deepcopy字典（在原始的基础上更改）</span></span><br><span class="line">dic4[<span class="string">&#x27;A&#x27;</span>] = <span class="number">100</span></span><br><span class="line">dic3[<span class="string">&#x27;B&#x27;</span>][<span class="number">0</span>] = <span class="number">90</span></span><br><span class="line">print(dic1)  <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [90, 92, 93], &#x27;C&#x27;: 94&#125;</span></span><br><span class="line">print(dic2)  <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [90, 92, 93], &#x27;C&#x27;: 94&#125;</span></span><br><span class="line">print(dic3)  <span class="comment">#》》&#123;&#x27;A&#x27;: 90, &#x27;B&#x27;: [90, 92, 93], &#x27;C&#x27;: 94&#125;</span></span><br><span class="line">print(dic4)  <span class="comment">#》》&#123;&#x27;A&#x27;: 100, &#x27;B&#x27;: [91, 92, 93], &#x27;C&#x27;: 94&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>直接赋值：新旧字典同步更改</p>
+</li>
+<li><p>浅拷贝<code>copy</code>，新旧字典子级完全一致，父级没有关系</p>
+</li>
+<li><p>深拷贝<code>deepcopy</code>新旧字典没有任何关系</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>fromkeys</code></p>
+<p>给定的多个 key 创建字典。这key 对应的 value 默认都是 None；也可额外传入一个参数作为默认的 value。</p>
+<p>一般不会使用字典对象调用，通常会使用 <code>dict</code> 类直接调用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">dic1 = <span class="built_in">dict</span>.fromkeys([<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>])</span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;a&#x27;: None, &#x27;b&#x27;: None, &#x27;c&#x27;: None&#125;</span></span><br><span class="line"></span><br><span class="line">dic2 = <span class="built_in">dict</span>.fromkeys((<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>))</span><br><span class="line">print(dic2)</span><br><span class="line"><span class="comment">#》》&#123;11: None, 22: None, 33: None&#125;</span></span><br><span class="line"></span><br><span class="line">dic3 = <span class="built_in">dict</span>.fromkeys([<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>],<span class="number">111</span>)</span><br><span class="line">print(dic3)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;a&#x27;: 111, &#x27;b&#x27;: 111, &#x27;c&#x27;: 111&#125;</span></span><br><span class="line"></span><br><span class="line">dic4 = <span class="built_in">dict</span>.fromkeys([<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>],(<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>))</span><br><span class="line">print(dic4)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;a&#x27;: (11, 22, 33), &#x27;b&#x27;: (11, 22, 33), &#x27;c&#x27;: (11, 22, 33)&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><code>get</code></p>
+<p>根据key来获取value。</p>
+<p>虽然可以通过<code>字典名[键]</code>来获得值，但如果不存在要访问的key，程序会报<code>keyError</code>错误。但是用<code>get()</code>方法访问不存在的key，方法会返回<code>None</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">print(dic1.get(<span class="string">&#x27;D&#x27;</span>))</span><br><span class="line"><span class="comment">#》》98</span></span><br><span class="line">print(dic1.get(<span class="string">&#x27;E&#x27;</span>))</span><br><span class="line"><span class="comment">#》》None</span></span><br><span class="line">print(dic1[<span class="string">&#x27;E&#x27;</span>])</span><br><span class="line"><span class="comment">#》》KeyError: &#x27;E&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p><code>items</code></p>
+<p>获取字典所有的键值对。</p>
+<p>返回类型是：dic_items。可以用list()方法转化成列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">ims1 = dic1.items()</span><br><span class="line">print(<span class="built_in">type</span>(ims1))  <span class="comment">#查看数据类型</span></span><br><span class="line"><span class="comment">#》》&lt;class &#x27;dict_items&#x27;&gt;</span></span><br><span class="line"></span><br><span class="line">list1 = <span class="built_in">list</span>(ims1)</span><br><span class="line">print(list1)  <span class="comment">#转化成列表类型</span></span><br><span class="line"><span class="comment">#》》[(&#x27;A&#x27;, 95), (&#x27;B&#x27;, 98), (&#x27;C&#x27;, 96), (&#x27;D&#x27;, 98)]</span></span><br><span class="line"></span><br><span class="line">print(list1[<span class="number">0</span>])  <span class="comment">#查看列表的第一个元素</span></span><br><span class="line"><span class="comment">#》》(&#x27;A&#x27;, 95)</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p><code>keys</code></p>
+<p>获取字典所有的键。</p>
+<p>返回类型是：dic_keys。可以用list()方法转化成列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">key1 = dic1.keys()</span><br><span class="line">print(<span class="built_in">type</span>(key1))  <span class="comment">#查看数据类型</span></span><br><span class="line"><span class="comment">#》》&lt;class &#x27;dict_keys&#x27;&gt;</span></span><br><span class="line"></span><br><span class="line">list1 = <span class="built_in">list</span>(key1)</span><br><span class="line">print(list1)  <span class="comment">#转化成列表类型</span></span><br><span class="line"><span class="comment">#》》[&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, &#x27;D&#x27;]</span></span><br><span class="line"></span><br><span class="line">print(list1[<span class="number">1</span>])  <span class="comment">#查看列表的第一个元素</span></span><br><span class="line"><span class="comment">#》》B</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p><code>values</code></p>
+<p>获取字典所有的值。</p>
+<p>返回类型是：dic_values。可以用list()方法转化成列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">value1 = dic1.values()</span><br><span class="line">print(<span class="built_in">type</span>(value1))  <span class="comment">#查看数据类型</span></span><br><span class="line"><span class="comment">#》》&lt;class &#x27;dict_values&#x27;&gt;</span></span><br><span class="line"></span><br><span class="line">list1 = <span class="built_in">list</span>(value1)</span><br><span class="line">print(list1)  <span class="comment">#转化成列表类型</span></span><br><span class="line"><span class="comment">#》》[95, 98, 96, 98]</span></span><br><span class="line"></span><br><span class="line">print(list1[<span class="number">2</span>])  <span class="comment">#查看列表的第一个元素</span></span><br><span class="line"><span class="comment">#》》96</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p><code>pop</code></p>
+<p>获取指定的key对应的value，并且删除这个键值对</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">print(dic1.pop(<span class="string">&#x27;A&#x27;</span>))</span><br><span class="line"><span class="comment">#》》95</span></span><br><span class="line"></span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;B&#x27;: 98, &#x27;C&#x27;: 96, &#x27;D&#x27;: 98&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p><code>popitem</code></p>
+<p>删除最后插入的键值对</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">print(dic1.popitem())</span><br><span class="line"><span class="comment">#》》(&#x27;D&#x27;, 98)</span></span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;A&#x27;: 95, &#x27;B&#x27;: 98, &#x27;C&#x27;: 96&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p><code>setdefault</code></p>
+<p>返回指定键的值（有<code>get</code>方法）。</p>
+<p>如果该键不存在，则插入具有指定值（默认值）的键。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">print(dic1.setdefault(<span class="string">&#x27;C&#x27;</span>))</span><br><span class="line"><span class="comment">#》》96</span></span><br><span class="line"></span><br><span class="line">print(dic1.setdefault(<span class="string">&#x27;E&#x27;</span>))  <span class="comment">#不存在的‘E’的值，插入指定值（None）并且返回None</span></span><br><span class="line"><span class="comment">#》》None</span></span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;A&#x27;: 95, &#x27;B&#x27;: 98, &#x27;C&#x27;: 96, &#x27;D&#x27;: 98, &#x27;E&#x27;: None&#125;</span></span><br><span class="line"></span><br><span class="line">print(dic1.setdefault(<span class="string">&#x27;F&#x27;</span>,<span class="number">99</span>))  <span class="comment">#不存在的&#x27;F&#x27;的值，插入给定值&#x27;99&#x27;，并且返回给定值‘99’</span></span><br><span class="line"><span class="comment">#》》99</span></span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;A&#x27;: 95, &#x27;B&#x27;: 98, &#x27;C&#x27;: 96, &#x27;D&#x27;: 98, &#x27;E&#x27;: None, &#x27;F&#x27;: 99&#125;</span></span><br><span class="line"></span><br><span class="line">print(dic1.setdefault(<span class="string">&#x27;A&#x27;</span>,<span class="number">59</span>))  <span class="comment">#存在的&#x27;A&#x27;的值，给定了值59，不会改变</span></span><br><span class="line"><span class="comment">#》》95</span></span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;A&#x27;: 95, &#x27;B&#x27;: 98, &#x27;C&#x27;: 96, &#x27;D&#x27;: 98, &#x27;E&#x27;: None, &#x27;F&#x27;: 99&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p><code>update</code></p>
+<p>更新原来有的字典。</p>
+<p>如果原来的键值对有，就更新。如果没有，就添加。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">95</span>,<span class="string">&#x27;B&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;C&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;D&#x27;</span>:<span class="number">98</span>&#125;</span><br><span class="line">dic1.update(&#123;<span class="string">&#x27;A&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;E&#x27;</span>:<span class="number">100</span>&#125;)</span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment">#》》&#123;&#x27;A&#x27;: 98, &#x27;B&#x27;: 98, &#x27;C&#x27;: 96, &#x27;D&#x27;: 98, &#x27;E&#x27;: 100&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+</li>
+</ul>
+
+ 
+  <!-- 添加版权声明 -->
+    
+
+  <div class="declare">
+    <strong>本文作者：</strong>
+    
+      yeemj
+    
+    <br>
+    <strong>本文链接：</strong>
+    https://yeemj.github.io/posts/32660952/
+    <br>
+    <strong>版权声明：</strong>
+    本作品采用
+    <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享4.0国际许可协议</a>
+    进行许可。转载请注明出处！
+    
+  </div>
+
+      <!-- 添加版权声明 -->
 
     </div>
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">python用法查询</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/cs学习//" class="article-tag-list-link color5">cs学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -244,7 +432,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yeemj.github.io/categories/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yeemj.github.io/posts/32660952/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -256,6 +444,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/posts/dc230e8e/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          8列表和字典
+        
+      </div>
+    </a>
+  
+  
+    <a href="/posts/79b7c003/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">6列表</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -274,6 +481,44 @@
 </aside>
 
 
+
+  
+  
+  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "dWnr5eR8DkSgp7gOHIKOLNBD-gzGzoHsz",
+            app_key: "cdqEUHUEqmB98LrXGd7J3TSO",
+            placeholder: "欢迎老铁们评论指正！",
+            avatar:"robohash"
+        });
+    }
+</script>
+
+  </section>
+
+
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -296,7 +541,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
