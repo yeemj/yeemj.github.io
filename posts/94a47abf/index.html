@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yeemj.github.io">
-  <title>P2Python中的转义字符 | yeemj&#39;s blog</title>
+  <title>P13类与对象 | yeemj&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转义字符——以反斜杠\开头的符号。   本篇内容：举例说明转义字符的用法。">
+  <meta name="description" content="介绍python面向对象编程中的重要概念——类与对象。 包括类的创建与调用，继承与定制。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P2Python中的转义字符">
-<meta property="og:url" content="https://yeemj.github.io/posts/8f920c3/index.html">
+<meta property="og:title" content="P13类与对象">
+<meta property="og:url" content="https://yeemj.github.io/posts/94a47abf/index.html">
 <meta property="og:site_name" content="yeemj&#39;s blog">
-<meta property="og:description" content="转义字符——以反斜杠\开头的符号。   本篇内容：举例说明转义字符的用法。">
+<meta property="og:description" content="介绍python面向对象编程中的重要概念——类与对象。 包括类的创建与调用，继承与定制。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-08T12:14:28.000Z">
-<meta property="article:modified_time" content="2021-01-24T07:24:22.130Z">
+<meta property="article:published_time" content="2021-01-24T04:14:31.000Z">
+<meta property="article:modified_time" content="2021-01-24T07:24:05.729Z">
 <meta property="article:author" content="yeemj">
 <meta property="article:tag" content="python用法查询">
 <meta name="twitter:card" content="summary">
@@ -156,20 +156,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-P2Python中的转义字符" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-P13类与对象" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      P2Python中的转义字符
+      P13类与对象
     </h1>
   
 
         
-        <a href="/posts/8f920c3/" class="archive-article-date">
-  	<time datetime="2021-01-08T12:14:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-08</time>
+        <a href="/posts/94a47abf/" class="archive-article-date">
+  	<time datetime="2021-01-24T04:14:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-24</time>
 </a>
         
 		
@@ -179,71 +179,87 @@
       
 
  
- <p>  转义字符——以反斜杠<code>\</code>开头的符号。</p>
-<p>  本篇内容：举例说明转义字符的用法。</p>
+ <p>介绍python面向对象编程中的重要概念——类与对象。</p>
+<p>包括类的创建与调用，继承与定制。</p>
 <a id="more"></a>
 
-<p>转义字符表：</p>
-<table>
-<thead>
-<tr>
-<th align="center">转义字符</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">\n</td>
-<td align="left">换行符，将光标位置移到下一行开头</td>
-</tr>
-<tr>
-<td align="center">\r</td>
-<td align="left">回车符，将光标位置移到本行开头</td>
-</tr>
-<tr>
-<td align="center">\t</td>
-<td align="left">水平制表符，也即 Tab 键，一般相当于四个空格</td>
-</tr>
-<tr>
-<td align="center">\b</td>
-<td align="left">退格（Backspace），将光标位置移到前一列</td>
-</tr>
-<tr>
-<td align="center">\\</td>
-<td align="left">反斜线\</td>
-</tr>
-<tr>
-<td align="center">\&#39;</td>
-<td align="left">单引号’</td>
-</tr>
-<tr>
-<td align="center">\“</td>
-<td align="left">双引号”</td>
-</tr>
-<tr>
-<td align="center">\</td>
-<td align="left">在字符串行尾的续行符，即一行未完，转到下一行继续写</td>
-</tr>
-</tbody></table>
+<p>类有自己独特的属性和方法，是这个类的所有实例都共享的。即每个实例都可以调用类中所有的属性和方法。</p>
+<h4 id="1-类的创建"><a href="#1-类的创建" class="headerlink" title="1. 类的创建"></a>1. 类的创建</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chinese</span>:</span></span><br><span class="line">    eyes = <span class="string">&#x27;black&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;筷子吃饭&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p>类的创建：<br>class + 类名（首字母大写）:（有英文的冒号）<br>    属性直接赋值<br>    定义类的方法——类中参数带有 self 的函数，是类方法的一种形式。<br>    self 参数毕业放在首位——定义时不可以没有，调用时不需要传递参数<br>    可以定义多个属性和方法</p>
+<h4 id="2-类的调用"><a href="#2-类的调用" class="headerlink" title="2. 类的调用"></a>2. 类的调用</h4><h5 id="2-1-类实例化"><a href="#2-1-类实例化" class="headerlink" title="2.1 类实例化"></a>2.1 类实例化</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chinese</span>:</span></span><br><span class="line">    eyes = <span class="string">&#x27;black&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;筷子吃饭&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">person = Chinese()</span><br><span class="line">person.eyes</span><br><span class="line">person.eat</span><br></pre></td></tr></table></figure>
+
+
+<p>类的实例化：<br>实例对象 = 类名()<br>可以创建多个实例<br>调用类的属性和方法：<br>实例.属性<br>实例.方法</p>
+<blockquote>
+<p>这里和 Java 不同的地方至于，实例化对象不需要关键字 new</p>
+</blockquote>
+<h5 id="2-2-self参数"><a href="#2-2-self参数" class="headerlink" title="2.2 self参数"></a>2.2 self参数</h5><blockquote>
+<p>类似于 Java 中的关键字 this</p>
+</blockquote>
 <ol>
-<li>换行符<code>\n</code> (new line) （这里换行也可以采用<code>print(&#39;&#39;&#39;  &#39;&#39;&#39;)</code>print()函数的三引号用法</li>
+<li>实例调用</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;哆啦A梦的许愿瓶：\n1.有钱有闲 \n2.满世界兜风\n3.睡着都笑醒&#x27;</span>)</span><br><span class="line"><span class="comment">#》》以下是结果</span></span><br><span class="line">-------------------</span><br><span class="line">哆啦A梦的许愿瓶：</span><br><span class="line"><span class="number">1.</span>有钱有闲</span><br><span class="line"><span class="number">2.</span>满世界兜风</span><br><span class="line"><span class="number">3.</span>睡着都笑醒</span><br><span class="line">-------------------</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chinese</span>:</span></span><br><span class="line">    eyes = <span class="string">&#x27;黑&#x27;</span></span><br><span class="line">    skin = <span class="string">&#x27;黄&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">feature</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;&#123;&#125;眼睛，&#123;&#125;皮肤&#x27;</span>.<span class="built_in">format</span>(self.eyes,self.skin))</span><br><span class="line"></span><br><span class="line">person = Chinese()</span><br><span class="line">person.feature()</span><br><span class="line"><span class="comment">#》》黑眼睛，黄皮肤</span></span><br></pre></td></tr></table></figure>
+<p>在上述过程中，会将 <code>yeemj</code> 赋值给 <code>self</code>，所以<code>self.eyes = yeemj.eyes</code></p>
 <ol start="2">
-<li>回车符<code>\r</code>(return)，将光标移到一行的开始，所以\r之后的内容会覆盖掉上次打印的内容</li>
+<li>类的内部调用</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;满世界兜风是哆啦A梦的许愿瓶&#x27;</span>)</span><br><span class="line">print(<span class="string">&#x27;满世界兜风是哆啦A梦的许愿瓶\r睡着都笑醒&#x27;</span>)</span><br><span class="line"><span class="comment">#》》以下是结果</span></span><br><span class="line">-------------------</span><br><span class="line">满世界兜风是哆啦A梦的许愿瓶</span><br><span class="line">睡着都笑醒是哆啦A梦的许愿瓶</span><br><span class="line">-------------------</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>水平制表符<code>\t</code>(table)，1个tab键，水平上移动四个空格</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;许愿瓶1\t\t许愿瓶2\t\t许愿瓶3&#x27;</span>)</span><br><span class="line">print(<span class="string">&#x27;有钱有闲\t满世界兜风\t睡着都笑醒&#x27;</span>)</span><br><span class="line"><span class="comment">#》》以下是结果</span></span><br><span class="line">-------------------</span><br><span class="line">许愿瓶<span class="number">1</span>         许愿瓶<span class="number">2</span>         许愿瓶<span class="number">3</span></span><br><span class="line">有钱有闲        满世界兜风       睡着都笑醒</span><br><span class="line">-------------------</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>反斜线<code>\\</code>单引号<code>\&#39;</code> 双引号 <code>\&quot;</code>，输出一个反斜杠\一个单引号’一个双引号</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27; 输出一个斜杠\\一个单引号\&#x27;一个双引号\&quot; &#x27;</span></span><br><span class="line">print(a)</span><br><span class="line"><span class="comment">#》》输出一个斜杠\一个单引号&#x27;一个双引号&quot;</span></span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>续行符<code>\</code>，用在字符串末尾，表示信息未完</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在以下的例子中，\表示一句话未完</span></span><br><span class="line">a1 = <span class="string">&quot;有钱有闲！\</span></span><br><span class="line"><span class="string">满世界兜风！\</span></span><br><span class="line"><span class="string">睡着都笑醒！&quot;</span></span><br><span class="line">print(a1)</span><br><span class="line"><span class="comment">#》》有钱有闲！满世界兜风！睡着都笑醒！</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#在以下的例子中，\n表示换行，\表示一句话未完</span></span><br><span class="line">a2 = <span class="string">&quot;有钱有闲\n\</span></span><br><span class="line"><span class="string">满世界兜风\n\</span></span><br><span class="line"><span class="string">睡着都笑醒&quot;</span></span><br><span class="line">print(a2)</span><br><span class="line"><span class="comment">#》》以下是结果</span></span><br><span class="line">-------------------</span><br><span class="line">有钱有闲！</span><br><span class="line">满世界兜风！</span><br><span class="line">睡着都笑醒！</span><br><span class="line">-------------------</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chinese</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">greeting1</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;Nice to meet you&#x27;</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">greeting2</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;I am from China&#x27;</span>)</span><br><span class="line">        self.greeting1()</span><br><span class="line">person = Chinese()</span><br><span class="line">person.greeting2()</span><br><span class="line"></span><br><span class="line"><span class="comment">#》》I am from China  Nice to meet you</span></span><br></pre></td></tr></table></figure>
+<p>在上述过程中，内部调用其他的方法和属性：<br>self.方法<br>self.属性</p>
+<h4 id="3-初始化方法"><a href="#3-初始化方法" class="headerlink" title="3. 初始化方法"></a>3. 初始化方法</h4><blockquote>
+<p>Java中的默认构造方法</p>
+</blockquote>
+<p>初始化方法：实例创建时，自动调用运行</p>
+<p>因此大多在初始化方法内完成类属性的创建，设置其初始值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br></pre></td></tr></table></figure>
+<p>若方法名左右戴上了下划线，就表明此方法是特殊方法。</p>
+<p>Attention：是 <code>init</code> 不是 <code>int</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chinese</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name,birth,region</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.birth = birth</span><br><span class="line">        self.region = region</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">born</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;&#123;&#125;在&#123;&#125;出生在&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(self.name,self.birth,self.region))</span><br><span class="line">person = Chinese(<span class="string">&#x27;yeemj&#x27;</span>,<span class="string">&#x27;1998&#x27;</span>,<span class="string">&#x27;HuNan&#x27;</span>)</span><br><span class="line">person.born()</span><br><span class="line"><span class="comment">#》》yeemj在1998出生在HuNan</span></span><br></pre></td></tr></table></figure>
+<p>在上述过程中，因为初始化方法除了self 之外有三个参数，因此在实例化对象时，也需要传入三个参数</p>
+<h4 id="4-类的继承与定制"><a href="#4-类的继承与定制" class="headerlink" title="4. 类的继承与定制"></a>4. 类的继承与定制</h4><p>B类 继承了 A类，就称 B类 是 A类 的子类， A类 是 B类 的父类，或者是超类。</p>
+<p>B类 继承了 A类，就拥有 A类 所有的属性和方法（方称之为继承）。</p>
+<p>但是 B类 可以有自己单独的属性和方法（方称之为定制）。</p>
+<p>所有的类都是 类Object 的子类，Object称为 基类/根类。</p>
+<h5 id="4-1-类的继承"><a href="#4-1-类的继承" class="headerlink" title="4.1 类的继承"></a>4.1 类的继承</h5><p>B类 继承了 A类，就称 B类 是 A类 的子类， A类 是 B类 的父类，或者是超类。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>)</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Java 的继承： class B extends A:</p>
+</blockquote>
+<p>B类 继承了 A类，就拥有 A类 所有的属性和方法（方称之为继承）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span>:</span></span><br><span class="line">    benefit1 = <span class="string">&#x27;relax&#x27;</span></span><br><span class="line">    benefit2 = <span class="string">&#x27;clever&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">readMethod</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;检视阅读，分析阅读，主题阅读&#x27;</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HistoryBook</span>(<span class="params">Book</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">sanguo = HistoryBook()</span><br><span class="line">print(sanguo.benefit2)   <span class="comment">#》》clever</span></span><br><span class="line">sanguo.readMethod()   <span class="comment">#》》检视阅读，分析阅读，主题阅读</span></span><br></pre></td></tr></table></figure>
+<p>在上述例子中，<code>HistoryBook</code>是<code>Book</code>的子类，<code>HistoryBook</code>类继承了<code>Book</code>类的所有属性和方法，因此<code>HistoryBook</code>类的实例化对象<code>sanguo</code>就可以调用<code>HistoryBook</code>类的方法和属性，即<code>Book</code>类中的属性和方法。</p>
+<p>继承中的子类和父类实例对象关系</p>
+<ul>
+<li>子类的实例，同时也属于父类，反之不然。</li>
+<li>父类可以被无限个子类所继承</li>
+</ul>
+<p>判断某个实例是否属于某一个类： <code>isinstance()</code>，返回布尔值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">China</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HuNan</span>(<span class="params">Chinese</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">HuBei = Chinese()</span><br><span class="line">ChangSha = HuNan()</span><br><span class="line"></span><br><span class="line">print(<span class="built_in">isinstance</span>(HuBei,Chinese))  <span class="comment">#》》Ture</span></span><br><span class="line">print(<span class="built_in">isinstance</span>(HuBei,HuNan))  <span class="comment">#》》False</span></span><br><span class="line"></span><br><span class="line">print(<span class="built_in">isinstance</span>(ChangSha,Chinese))  <span class="comment">#》》Ture</span></span><br><span class="line">print(<span class="built_in">isinstance</span>(ChangSha,HuNan))  <span class="comment">#》》Ture</span></span><br></pre></td></tr></table></figure>
+
+
+<h6 id="4-1-1-多层继承"><a href="#4-1-1-多层继承" class="headerlink" title="4.1.1 多层继承"></a>4.1.1 多层继承</h6><p>继承可以发生在多个层级之间，只要发生了继承关系，就可以一直继承。深度方向上继承。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    numA = <span class="number">1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    numB = <span class="number">2</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>(<span class="params">B</span>):</span></span><br><span class="line">    numC = <span class="number">3</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>(<span class="params">C</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">d = D()</span><br><span class="line">print(d.numA)</span><br><span class="line"><span class="comment">#》》1</span></span><br></pre></td></tr></table></figure>
+
+
+<h6 id="4-1-2-多重继承"><a href="#4-1-2-多重继承" class="headerlink" title="4.1.2 多重继承"></a>4.1.2 多重继承</h6><p>一个类，可以同时继承多个类，语法为<code>class A(B,C,D):</code></p>
+<p>讲究顺序。和子类更相关的父类会放在更左侧。也就是说，A类调用一个属性或者方法，首先会从B类中寻找，B类没有再会去C类寻找。</p>
+<p>相比于多层继承，多重继承属于横向上的继承。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    num = <span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">showNum</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;继承的A的数值为&#123;&#125;&#x27;</span>,<span class="built_in">format</span>(self.num))</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span></span><br><span class="line">    name = <span class="string">&#x27;B&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">showName</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;继承的B的名字为&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(self.name))</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>:</span></span><br><span class="line">    num = <span class="number">3</span></span><br><span class="line">    name = <span class="string">&#x27;C&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">showinfo</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;继承的C的数值是&#123;&#125;，名字是&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(self.num,self.name))</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>(<span class="params">A,B,C</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">d = D()</span><br><span class="line">print(d.num)</span><br><span class="line">d.showName()</span><br><span class="line">d.showinfo()</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">继承的B的名字为B</span></span><br><span class="line"><span class="string">继承的C的数值是1，名字是B</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>在上述过程中，<code>d.num</code>的属性可以从 A 也可以从 C 继承，但是 A 作为关系更相关的类，于是就继承了 A 的<code>num</code>属性值，也就是1.</p>
+<p><code>d.showName()</code>的属性 A 中没有，于是从 B 中找寻，调用 B 的<code>showName()</code>方法。</p>
+<p><code>d.showinfo()</code>在 C 中调用，但是因为在 A 和 B 中都有定义的<code>num</code>和<code>name</code>，所以是继承了 A 的<code>num</code>属性，B的<code>name</code>属性。</p>
+<p>多层继承和多重继承的结合，让继承的类拥有更多的属性和方法，且能更灵活地调用。继承的力量也得以放大了很多倍。</p>
+<h5 id="4-2-类的定制"><a href="#4-2-类的定制" class="headerlink" title="4.2 类的定制"></a>4.2 类的定制</h5><p>类的定制，其实就是子类继承了父类之后，子类可以有自己的属性和方法。</p>
+<p>在父类属性和方法的基础上新增自己的属性和方法。</p>
+<p>重写父类的属性和方法。</p>
+<h6 id="4-2-1-新增属性和方法"><a href="#4-2-1-新增属性和方法" class="headerlink" title="4.2.1 新增属性和方法"></a>4.2.1 新增属性和方法</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chinese</span>:</span></span><br><span class="line">    eyes = <span class="string">&#x27;black&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;筷子&#x27;</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HuNan</span>(<span class="params">Chinese</span>):</span></span><br><span class="line">    flavor = <span class="string">&#x27;spicy&#x27;</span></span><br></pre></td></tr></table></figure>
+<h6 id="4-2-2-重写父类的属性和方法"><a href="#4-2-2-重写父类的属性和方法" class="headerlink" title="4.2.2 重写父类的属性和方法"></a>4.2.2 重写父类的属性和方法</h6><p>对父类的方法进行重写。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chinese</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">landArea</span>(<span class="params">self,area</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;我们国家陆地面积是%d万平方公里左右。&#x27;</span>% area)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HuNanPerson</span>(<span class="params">Chinese</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">landArea</span>(<span class="params">self,area</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;我们省陆地面积是%d万平方公里左右。&#x27;</span>% <span class="built_in">int</span>(area * <span class="number">0.022</span>))</span><br><span class="line">        </span><br><span class="line">person1 = HuNanPerson()</span><br><span class="line">person1.landArea(<span class="number">960</span>)</span><br><span class="line"><span class="comment">#》》我们省陆地面积是21万平方公里左右。</span></span><br></pre></td></tr></table></figure>
+<p>但是这样写很麻烦，全国34个省市，要重写34遍么……</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chinese</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">landArea</span>(<span class="params">self,area</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;我们国家陆地面积是%d万平方公里左右。&#x27;</span>% area)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HuNanPerson</span>(<span class="params">Chinese</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">landArea</span>(<span class="params">self,area,rate = <span class="number">0.022</span></span>):</span></span><br><span class="line">        Chinese.landArea(self,area*rate)   <span class="comment">##这里是调用了父类Chinese的方法，但是改变了参数。</span></span><br><span class="line"></span><br><span class="line">person1 = HuNanPerson()</span><br><span class="line">person1.landArea(<span class="number">960</span>)</span><br><span class="line"><span class="comment">#》》我们省陆地面积是21万平方公里左右。</span></span><br></pre></td></tr></table></figure>
+<p>由上述例子可知，子类继承父类方法的操作是在<code>def</code>语句后接<code>父类.方法（参数）</code>，通过参数的调整完成了定制。</p>
 <hr>
 <hr>
 <p>如有错误，敬请指出。</p>
@@ -259,7 +275,7 @@
     
     <br>
     <strong>本文链接：</strong>
-    https://yeemj.github.io/posts/8f920c3/
+    https://yeemj.github.io/posts/94a47abf/
     <br>
     <strong>版权声明：</strong>
     本作品采用
@@ -346,7 +362,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yeemj.github.io/posts/8f920c3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yeemj.github.io/posts/94a47abf/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -360,18 +376,9 @@
   
 <nav id="article-nav">
   
-    <a href="/posts/79b7c003/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          P6列表
-        
-      </div>
-    </a>
   
-  
-    <a href="/posts/152edb29/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">P1print函数</div>
+    <a href="/posts/b26cec53/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">P12常见错误</div>
       <i class="icon-circle-right"></i>
     </a>
   
